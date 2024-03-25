@@ -1,4 +1,4 @@
-#include "bindings.h"
+#include "avideostream.h"
 
 // Bindings for FrameEncoder (Only JPEGEncoder)
 static PyObject *JPEGEncoder_new(PyTypeObject *type, PyObject *args, PyObject *kwds) {
@@ -143,13 +143,13 @@ static PyMethodDef module_methods[] = {
 
 static struct PyModuleDef module = {
         PyModuleDef_HEAD_INIT,
-        .m_name = "videostream",
+        .m_name = "avideostream",
         .m_doc = "Directly use libav (ffmpeg) to read RTSP streams with python bindings.",
         .m_size = -1,
         .m_methods = module_methods
 };
 
-PyMODINIT_FUNC PyInit_videostream(void) {
+PyMODINIT_FUNC PyInit_avideostream(void) {
     PyObject * m;
 
     if (PyType_Ready(&VideoStreamType) < 0) {

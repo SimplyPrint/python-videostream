@@ -1,20 +1,20 @@
 from setuptools import setup, Extension, find_packages
 
 setup(
-    name="videostream",
+    name="avideostream",
     version="0.1.0",
-    author="Javad Shafique",
+    author="SimplyPrint",
     author_email="javad.asgari@simplyprint.io",
-    description="A Python package for streaming video with Python bindings.",
+    description="Directly use libav (ffmpeg) to read RTSP streams with python bindings.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     packages=find_packages(),
     include_package_data=True,
     ext_modules=[
         Extension(
-            "videostream",
+            "avideostream",
             sources=[
-                "src/bindings.c",
+                "src/avideostream.c",
                 "src/VideoStream.c",
                 "src/FrameEncoding.c"
             ],
